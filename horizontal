@@ -1,0 +1,3 @@
+cat flinnconf/gamelist.horizontal > flinnconf/gamelist
+./flinn flinnconf
+

@@ -1,0 +1,34 @@
+
+diff flynn.c flynn.craiger.c
+
+72a73,79
+> #ifdef USE_JOYSTICK
+> int last_xjoy_value = 0;
+> int last_yjoy_value = 0;
+> static int pos_joy_dead_spot = 8000;
+> static int neg_joy_dead_spot = -8000;
+> #endif
+>
+210c217
+<                        if (joy_event.value < 0) {
+---
+>                        if ((joy_event.value < neg_joy_dead_spot) && (last_xjoy_value >= neg_joy_dead_spot)) {
+214c221
+<                        } else if (joy_event.value > 0) {
+---
+>                        } else if ((joy_event.value > pos_joy_dead_spot) && (last_xjoy_value <= pos_joy_dead_spot)) {
+218a226
+>                       last_xjoy_value = joy_event.value;
+220c228
+<                        if (joy_event.value < 0) {
+---
+>                        if ((joy_event.value < neg_joy_dead_spot) && (last_yjoy_value >= neg_joy_dead_spot)) {
+224c232
+<                        } else if (joy_event.value > 0) {
+---
+>                        } else if ((joy_event.value > pos_joy_dead_spot) && (last_yjoy_value <= pos_joy_dead_spot)) {
+228a237
+>                        last_yjoy_value = joy_event.value;
+
+
+

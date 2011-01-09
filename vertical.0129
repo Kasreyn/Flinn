@@ -1,0 +1,3 @@
+cat flinnconf.0129/gamelist.vertical > flinnconf.0129/gamelist
+./flinn -ror flinnconf.0129
+

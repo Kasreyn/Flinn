@@ -1,0 +1,15 @@
+Here are use contributions to Flynn which either I haven't gotten around
+to evaluating, won't be part of Flynn due to philosophical differences,
+or stand alone in their own right.
+
+flynn-fork.patch - by harold@the-collective.net
+---------------- STATUS: will not be part of Flynn.
+"Here's an update that forks before the execl, so that when you quit a
+game, flynn is still there..."
+
+analog-joystick.patch - by Craig Lamparter <craiger@hemna.rose.hp.com>
+--------------------- STATUS: not evaluated
+"I modified your source to be sensetive to analog joysticks - scrolling
+was totally out of control (it processed events as the stick swung from an
+extreme, back to center)."
+

@@ -1,0 +1,49 @@
+2004-08-24 Adam D. Moss <adam@gimp.org>
+
+        * RELEASE 0.94.1
+
+        * very minor changes
+        * user-supplied patches in the contrib/ dir for analogue joystick
+        support and forking
+
+2002-07-30 Adam D. Moss <adam@gimp.org>
+
+	* RELEASE 0.94
+
+	* some physfs support (not enabled)
+	* more minor tweaks
+
+2001-10-14 Adam D. Moss <adam@gimp.org>
+
+	* use gdk_flush() to aid smoothness
+	* more fiddling with defaults
+
+2001-10-13 Adam D. Moss <adam@gimp.org>
+
+	* RELEASE 0.93
+
+	* larger default jiggliness, smooth-snapping of selected option
+	* idle-sleep based on real-world timeouts instead of frame-counts
+	* more code comments
+	* removed C++-style comments
+
+2001-10-08 Adam D. Moss <adam@gimp.org>
+
+	* RELEASE 0.92
+
+	* Woohoo - optional linux joystick support
+	  by Ben Saylor <bsaylor@macalester.edu>
+	* Mildly better Makefile
+
+2001-10-08 Adam D. Moss <adam@gimp.org>
+
+	* RELEASE 0.91
+
+	* Fix segfault
+	* Automated dist target
+
+2001-10-07 Adam D. Moss <adam@gimp.org>
+
+	* RELEASE 0.9
+
+	* Initial release

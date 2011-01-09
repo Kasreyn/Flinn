@@ -1,0 +1,10 @@
+setenv CMD "/hdg1/games/xmame-0.105/xmame.SDL"
+setenv SCREEN_IHEIGHT 512
+setenv SCREEN_HEIGHT 256
+
+setenv GAME $1
+
+setenv CMDLINE
+setenv SWAPTIME
+
+setenv RP /hdg1/games/xmame.games/

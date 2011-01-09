@@ -1,0 +1,49 @@
+#!/usr/bin/perl -w
+my $argcnt = $#ARGV + 1;
+my $b=0;
+my %gameoptions = ();
+
+#my $cmd = "./xmame.SDL -hiscore_file xmame-0.105/hiscore.dat -snapshot_directory . -fullscreen -jt 1 -jdev /dev/input/js0 -rompath ../games ";
+#my $cmd = "./mameat -switchres -snapshot_directory . -rompath ../games ";
+#my $cmd = "./mame -multithreading -switchres -resolution 640x480 -autosave "; 
+my $cmd = "./mame -multithreading -switchres -resolution 640x480 -autosave -rompath ../games";
+#my $cmd = "./mame -window -keepaspect ";
+
+#my $effects = "-ef 2 ";
+my $effects = "";
+
+#chdir("../sdlmame0136");
+chdir("../sdlmame0128u7");
+#chdir("../sdlmame0127u3");
+#chdir("../sdlmame0126");
+#chdir("../sdlmame0127u6");
+#chdir("../sdlmame0117u2");
+#chdir("../xmame-0.105");
+
+foreach $game (keys %gameoptions) {
+   if ($ARGV[0] eq $game) {
+   	print $cmd . $gameoptions{$game} . "$ARGV[1] " . $ARGV[0] . "\n";
+	system $cmd . $gameoptions{$game} . "$ARGV[1] " . $ARGV[0];
+   	$b=1;
+	last;
+   }
+}
+if ($b!=1) {
+	print $cmd . " " . $effects . "$ARGV[1] " . $ARGV[0] . "\n";
+	system $cmd . " " . $effects . "$ARGV[1] " . $ARGV[0];
+	
+}
+ 
+#print "$ARGV[0]\n";
+#print "$ARGV[1]\n";
+#print "$ARGV[2]\n";
+
+chdir("../");
+if ($argcnt < 3) {
+  print "./flinn flinnconf\n";
+  exec "./flinn flinnconf";
+}
+else {
+  print "./flinn $ARGV[2] flinnconf\n";
+  exec "./flinn $ARGV[2] flinnconf";
+}

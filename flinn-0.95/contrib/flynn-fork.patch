@@ -1,0 +1,20 @@
+--- flynn.c	Sun May  5 17:39:36 2002
++++ /shm/flynn-fork.c	Tue Aug 24 18:53:45 2004
+@@ -148,8 +148,15 @@
+   if (selected > -1 &&
+       selected < num_games)
+     {
+-      execl(game[selected].exec_cmd, "your_arg0", game[selected].mnemonic,
+-	    cwd, arg0, arg1, NULL);
++      if (!fork())
++	{ 
++	  execl(game[selected].exec_cmd, "your_arg0", game[selected].mnemonic,
++		cwd, arg0, arg1, NULL);
++	}
++    }
++  else
++    {
++      fprintf(stderr, "Warning: Invalid game number selected (%d)\n", selected);
+     }
+ }
+ 

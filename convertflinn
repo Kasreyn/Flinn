@@ -1,0 +1,13 @@
+#!/bin/sh
+#PLEASE NOTE THAT ONLY IMAGEMAGICK IN DEBIAN SARGE WORKS CORRECLY!
+#We want PPM RAW RGB type 6 (P6) but the newer ImageMagick automaticly selects type 3 (P3).
+for i in flinnconf/images_original/*; do
+  echo "converting $i to ppm in both 154x106 and 106x154"
+  base=`basename $i $ext`  
+  echo ${base%.*}
+  convert $i -resize 154x106! -depth 8 flinnconf/images_154x106/${base%.*}.ppm
+  convert $i -resize 106x154! -depth 8 flinnconf/images_106x154/${base%.*}.ppm
+  #stream -storage-type char flinnconf/images_154x106/${base%.*}.ppm flinnconf/images_154x106/${base%.*}_.ppm
+  #convert $i -resize 106x154! - | stream -storage-type char -  flinnconf/images_106x154/${base%.*}.ppm
+done
+
